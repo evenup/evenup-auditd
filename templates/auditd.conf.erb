@@ -1,0 +1,7 @@
+# Managed by puppet - do not modify
+#
+<% config = scope.lookupvar('config') -%>
+<% keys = config.keys.sort -%>
+<% keys.each do |k| -%>
+<%= "#{k} = #{config[k]}" %>
+<% end -%>
