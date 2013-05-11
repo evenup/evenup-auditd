@@ -1,0 +1,22 @@
+language: ruby
+bundler_args: --without development
+script: "bundle exec rake spec SPEC_OPTS='--format documentation'"
+rvm:
+  - 1.8.7
+  - 1.9.3
+env:
+  - PUPPET_GEM_VERSION="~> 2.7"
+  - PUPPET_GEM_VERSION="~> 3.0"
+  - PUPPET_GEM_VERSION="~> 3.1"
+matrix:
+  exclude:
+    - rvm: 1.9.3
+      env: PUPPET_GEM_VERSION="~> 2.7"
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      - secure: "PNmRogwdq3UjCsiHKQFPUi2280z1h2KoMtO2BOQgTGlKuClhuUh4u/Sjs1M0\ny97+DSDGhdDgpInWzQTAGN1rqTGndUn5NjK/XDgON8FXDn+pWvJ9PMN7heTe\nvVbCHkwvEiZYSM23K3K2ncu6xfDiGNwhD8jqSwYZ7oFV9DF8p/k="
+  on_success: always
+  on_failure: always
+
