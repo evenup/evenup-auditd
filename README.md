@@ -12,7 +12,14 @@ Usage:
 
 To install:
 <pre>
-  include audit
+  class { 'auditd': }
+</pre>
+
+To override a setting in the default config
+<pre>
+  class { 'auditd':
+    config_override => { 'num_logs' => 6 }
+  }
 </pre>
 
 
