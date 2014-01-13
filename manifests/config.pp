@@ -24,6 +24,7 @@ class auditd::config (
     group   => 'root',
     mode    => '0440',
     source  => $rules,
+    notify  => Class['auditd::service'],
   }
 
   file { '/etc/audit/auditd.conf':
@@ -32,6 +33,7 @@ class auditd::config (
     group   => 'root',
     mode    => '0440',
     content => template('auditd/auditd.conf.erb'),
+    notify  => Class['auditd::service'],
   }
 
   case $logsagent {
