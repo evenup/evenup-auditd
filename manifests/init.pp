@@ -74,11 +74,7 @@ class auditd (
   # Take care of business
   class { 'auditd::install': }
 
-  class { 'auditd::config':
-    logsagent => $logsagent,
-    rules     => $rules,
-    config    => $config,
-  }
+  class { 'auditd::config': }
 
   class { 'auditd::service': }
 
