@@ -12,18 +12,18 @@
 #
 # Copyright 2013 EvenUp.
 #
-class auditd::config (
-  $logsagent,
-  $rules,
-  $config,
-){
+class auditd::config {
+
+  if $caller_module_name != $module_name {
+    fail("Use of private class ${name} by ${caller_module_name}")
+  }
 
   file { '/etc/audit/audit.rules':
     ensure  => 'file',
     owner   => 'root',
     group   => 'root',
     mode    => '0440',
-    source  => $rules,
+    source  => $auditd::rules,
     notify  => Class['auditd::service'],
   }
 
@@ -36,9 +36,9 @@ class auditd::config (
     notify  => Class['auditd::service'],
   }
 
-  case $logsagent {
+  case $auditd::logsagent {
     'beaver': {
-      beaver::stanza { $config['log_file']:
+      beaver::stanza { $auditd::config['log_file']:
         type  => 'auditlog',
         tags  => [ 'audit', $::disposition ],
       }

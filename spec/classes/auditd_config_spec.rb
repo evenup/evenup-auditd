@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe 'auditd::config', :type => :class do
+describe 'auditd' do
   let(:facts) { { :concat_basedir => '/somewhere' } }
 
   let(:params) { {
-    :logsagent  => '',
-    :rules      => 'blah',
-    :config     => { 'field1' => 'value1', 'field2' => 'value2' }
+    :logsagent        => '',
+    :rules            => 'blah',
+    :config_override  => { 'field1' => 'value1', 'field2' => 'value2' }
   } }
 
   it { should contain_file('/etc/audit/audit.rules').with_source('blah') }
@@ -14,9 +14,9 @@ describe 'auditd::config', :type => :class do
 
   describe 'with beaver' do
     let(:params) { {
-      :logsagent => 'beaver',
-      :rules => 'blah',
-      :config => { 'log_file' => '/var/somewhere/audit.log' }
+      :logsagent        => 'beaver',
+      :rules            => 'blah',
+      :config_override  => { 'log_file' => '/var/somewhere/audit.log' }
     } }
 
     it { should contain_beaver__stanza('/var/somewhere/audit.log') }
