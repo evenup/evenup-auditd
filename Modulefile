@@ -1,5 +1,5 @@
 name 'evenup-auditd'
-version '0.1.1'
+version '0.2.0'
 author 'Justin Lambert <jlambert@letsevenup.com>'
 license 'Apache'
 summary 'Manages auditd'
