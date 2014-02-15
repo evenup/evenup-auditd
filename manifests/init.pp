@@ -37,8 +37,9 @@
 class auditd (
   $logsagent        = '',
   $rules            = 'puppet:///modules/auditd/audit.rules',
-  $config_override  = {}
-){
+  $config_override  = {},
+  $package_name     = $auditd::params::package_name,
+) inherits auditd::params {
 
   # Apply config overrides to the default config
   $default_config = {
