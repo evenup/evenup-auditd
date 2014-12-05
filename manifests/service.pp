@@ -22,6 +22,7 @@ class auditd::service {
   service { 'auditd':
     ensure  => 'running',
     enable  => true,
+    restart => '/sbin/service auditd restart',
   }
 
 }
