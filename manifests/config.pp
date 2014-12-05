@@ -18,8 +18,22 @@ class auditd::config {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
-  file { '/etc/audit/audit.rules':
+  case $::osfamily {
+    RedHat: {
+      if $::operatingsystemrelease =~ /^(4|5|6)/ {
+        $audit_rules_file = '/etc/audit/audit.rules'
+      } else {
+        $audit_rules_file = '/etc/audit/rules.d/audit.rules'
+      }
+    }
+    default: {
+      $audit_rules_file = '/etc/audit/audit.rules'
+    }
+  }
+
+  file { audit_rules_file:
     ensure  => 'file',
+    path    => $audit_rules_file,
     owner   => 'root',
     group   => 'root',
     mode    => '0440',
