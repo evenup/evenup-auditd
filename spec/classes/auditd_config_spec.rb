@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'auditd' do
-  let(:facts) { { :concat_basedir => '/somewhere' } }
+  let(:facts) { { :concat_basedir => '/somewhere', :osfamily => 'RedHat', :disposition => 'prod' } }
 
   let(:params) { {
     :logsagent        => '',

@@ -20,8 +20,8 @@ class auditd::service {
   }
 
   service { 'auditd':
-    ensure  => 'running',
-    enable  => true,
+    ensure => 'running',
+    enable => true,
   }
 
 }
