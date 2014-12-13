@@ -19,9 +19,9 @@ class auditd::install {
   }
 
   package { 'audit':
-    ensure  => 'latest',
-    name    => $auditd::package_name,
-    notify  => Class['auditd::service'],
+    ensure => 'latest',
+    name   => $auditd::package_name,
+    notify => Class['auditd::service'],
   }
 
 }
