@@ -63,7 +63,6 @@ class auditd (
     'disk_full_action'        => 'SUSPEND',
     'disk_error_action'       => 'SUSPEND',
     'tcp_listen_queue'        => 5,
-    'tcp_max_per_addr'        => 1,
     'tcp_client_max_idle'     => 0,
     'enable_krb5'             => 'no',
     'krb5_principal'          => 'auditd'
