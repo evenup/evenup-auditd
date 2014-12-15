@@ -2,27 +2,20 @@
   "name": "evenup-auditd",
   "version": "0.2.0",
   "author": "Justin Lambert <jlambert@letsevenup.com>",
-  "license": "Licensed under Apache 2.0",
+  "license": "Apache 2.0",
   "summary": "Manages auditd",
   "source": "https://github.com/evenup/evenup-auditd",
   "project_page": "https://github.com/evenup/evenup-auditd",
   "issues_url": "https://github.com/evenup/evenup-auditd/issues",
   "tags": ["auditd", "audit"],
   "operatingsystem_support": [
-    {
-    "operatingsystem":"RedHat",
-    "operatingsystemrelease":[ "6", "7" ]
-    },
-    {
-    "operatingsystem": "CentOS",
-    "operatingsystemrelease": [ "6", "7" ]
-    },
-    {
-      "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [ "12.04", "14.04" ]
-    }
+    { "operatingsystem":"RedHat", "operatingsystemrelease":[ "6", "7" ] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },
+    { "operatingsystem": "Ubuntu", "operatingsystemrelease": [ "10.04", "12.04", "14.04" ] }
   ],
   "dependencies": [
+    { "name": "evenup/beaver", "version_requirement": ">=1.0.0 <2.0.0" },
+    { "name": "puppetlabs/concat", "version_requirement": ">=1.0.0 <2.0.0" },
     { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0 <5.0.0" }
   ]
 }
