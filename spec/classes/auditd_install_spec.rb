@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe 'auditd' do
-  let(:facts) { { :osfamily => 'RedHat' } }
+  let(:facts) { { :osfamily => 'RedHat', :operatingsystemrelease => '7' } }
 
   it { should contain_package('audit').with_name('audit').with_ensure('latest') }
 
   context 'on Debian based systems' do
-    let(:facts) { {:osfamily => 'Debian'} }
+    let(:facts) { {:osfamily => 'Debian', :lsbmajdistrelease => '14.04' } }
     it { should contain_package('audit').with_name('auditd') }
   end
 
