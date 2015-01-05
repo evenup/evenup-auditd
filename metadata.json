@@ -1,15 +1,15 @@
 {
   "name": "evenup-auditd",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Justin Lambert <jlambert@letsevenup.com>",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "summary": "Manages auditd",
   "source": "https://github.com/evenup/evenup-auditd",
   "project_page": "https://github.com/evenup/evenup-auditd",
   "issues_url": "https://github.com/evenup/evenup-auditd/issues",
   "tags": ["auditd", "audit"],
   "operatingsystem_support": [
-    { "operatingsystem":"RedHat", "operatingsystemrelease":[ "6", "7" ] },
+    { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6", "7" ] },
     { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },
     { "operatingsystem": "Ubuntu", "operatingsystemrelease": [ "10.04", "12.04", "14.04" ] }
   ],

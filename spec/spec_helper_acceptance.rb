@@ -27,7 +27,6 @@ RSpec.configure do |c|
         shell('apt-get install rubygems -y')
       end
 
-
       copy_module_to(host, :source => proj_root, :module_name => 'auditd')
 
       on host, puppet('module', 'install', 'evenup/beaver'), { :acceptable_exit_codes => [0,1] }
