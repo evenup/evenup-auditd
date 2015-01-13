@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'auditd' do
   context 'RedHat' do
     context '6' do
-      let(:facts) { { :concat_basedir => '/somewhere', :osfamily => 'RedHat', :disposition => 'prod', :operatingsystemrelease => '6' } }
+      let(:facts) { { :concat_basedir => '/somewhere', :osfamily => 'RedHat', :disposition => 'prod', :operatingsystemrelease => '6.2' } }
       let(:params) { {
         :logsagent        => '',
         :rules            => 'blah',
