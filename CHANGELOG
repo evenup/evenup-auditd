@@ -1,3 +1,5 @@
+20150115 - 0.3.1
+  Correctly test RHEL6 based versions
 20150105 - 0.3.0
   Add acceptance tests
   Update support files
