@@ -103,7 +103,7 @@ class auditd::params {
 
       # RHEL7 moved audit rules to rules.d and breaks restart
       # https://bugzilla.redhat.com/show_bug.cgi?id=973697
-      if versioncmp($::operatingsystemrelease, '6') > 0 {
+      if versioncmp($::operatingsystemrelease, '7') >= 0 {
         $audit_rules_file = '/etc/audit/rules.d/audit.rules'
         $restart_cmd = '/sbin/service auditd restart'
       } else {
