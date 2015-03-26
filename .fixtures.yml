@@ -1,8 +1,14 @@
 fixtures:
-  repositories:
-    beaver: https://github.com/evenup/evenup-beaver.git
-    concat: https://github.com/puppetlabs/puppetlabs-concat.git
-    stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
+  forge_modules:
+    beaver:
+      repo: "evenup/beaver"
+      ref: "1.0.0"
+    concat:
+      repo: "puppetlabs/concat"
+      ref: "1.0.0"
+    stdlib:
+      repo: "puppetlabs/stdlib"
+      ref: "3.2.0"
   symlinks:
     auditd: "#{source_dir}"
 

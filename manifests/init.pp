@@ -41,7 +41,7 @@ class auditd (
   $package_name     = $::auditd::params::package_name,
   $restart_cmd      = $::auditd::params::restart_cmd,
   $config_override  = {},
-) inherits auditd::params {
+) inherits ::auditd::params {
 
   # Apply config overrides to the default config
   if !is_hash($config_override) {
@@ -50,10 +50,10 @@ class auditd (
 
   $config = merge($auditd::params::default_config, $config_override)
 
-  anchor { 'auditd::begin': } ->
-  class { 'auditd::install': } ->
-  class { 'auditd::config': } ~>
-  class { 'auditd::service': } ->
-  anchor { 'auditd::end': }
+  anchor { '::auditd::begin': } ->
+  class { '::auditd::install': } ->
+  class { '::auditd::config': } ~>
+  class { '::auditd::service': } ->
+  anchor { '::auditd::end': }
 
 }

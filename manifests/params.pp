@@ -38,7 +38,7 @@ class auditd::params {
             'tcp_listen_queue'        => 5,
             'tcp_client_max_idle'     => 0,
             'enable_krb5'             => 'no',
-            'krb5_principal'          => 'auditd'
+            'krb5_principal'          => 'auditd',
           }
         }
         default: {
@@ -66,7 +66,7 @@ class auditd::params {
             'tcp_max_per_addr'        => 1,
             'tcp_client_max_idle'     => 0,
             'enable_krb5'             => 'no',
-            'krb5_principal'          => 'auditd'
+            'krb5_principal'          => 'auditd',
           }
         }
       }
@@ -98,7 +98,7 @@ class auditd::params {
         'tcp_max_per_addr'        => 1,
         'tcp_client_max_idle'     => 0,
         'enable_krb5'             => 'no',
-        'krb5_principal'          => 'auditd'
+        'krb5_principal'          => 'auditd',
       }
 
       # RHEL7 moved audit rules to rules.d and breaks restart
