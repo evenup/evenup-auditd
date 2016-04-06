@@ -19,12 +19,12 @@ class auditd::config {
   }
 
   file { $::auditd::audit_rules_file:
-    ensure => 'file',
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0440',
-    source => $::auditd::rules,
-    notify => Class['auditd::service'],
+    ensure  => 'file',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0440',
+    content => $::auditd::rules,
+    notify  => Class['auditd::service'],
   }
 
   file { '/etc/audit/auditd.conf':
