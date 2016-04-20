@@ -10,7 +10,7 @@ describe 'auditd' do
         :config_override  => { 'field1' => 'value1', 'field2' => 'value2' }
       } }
 
-      it { should contain_file('/etc/audit/audit.rules').with_source('blah') }
+      it { should contain_file('/etc/audit/audit.rules').with_content('blah') }
       it { should contain_file('/etc/audit/auditd.conf').with_content(/field1\s\=\svalue1\nfield2\s\=\svalue2/) }
     end
 
@@ -22,7 +22,7 @@ describe 'auditd' do
         :config_override  => { 'field1' => 'value1', 'field2' => 'value2' }
       } }
 
-      it { should contain_file('/etc/audit/rules.d/audit.rules').with_source('blah') }
+      it { should contain_file('/etc/audit/rules.d/audit.rules').with_content('blah') }
       it { should contain_file('/etc/audit/auditd.conf').with_content(/field1\s\=\svalue1\nfield2\s\=\svalue2/) }
     end
   end
@@ -35,7 +35,7 @@ describe 'auditd' do
       :config_override  => { 'field1' => 'value1', 'field2' => 'value2' }
     } }
 
-    it { should contain_file('/etc/audit/audit.rules').with_source('blah') }
+    it { should contain_file('/etc/audit/audit.rules').with_content('blah') }
     it { should contain_file('/etc/audit/auditd.conf').with_content(/field1\s\=\svalue1\nfield2\s\=\svalue2/) }
 
   end
