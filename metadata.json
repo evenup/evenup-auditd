@@ -15,7 +15,7 @@
   ],
   "dependencies": [
     { "name": "evenup/beaver", "version_requirement": ">=1.0.0 <2.0.0" },
-    { "name": "puppetlabs/concat", "version_requirement": ">=1.0.0 <2.0.0" },
+    { "name": "puppetlabs/concat", "version_requirement": ">=1.0.0 <5.0.0" },
     { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0 <5.0.0" }
   ]
 }
