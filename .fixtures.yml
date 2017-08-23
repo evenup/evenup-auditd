@@ -2,13 +2,16 @@ fixtures:
   forge_modules:
     beaver:
       repo: "evenup/beaver"
-      ref: "1.0.0"
+      ref: "1.5.0"
     concat:
       repo: "puppetlabs/concat"
-      ref: "1.0.0"
+      ref: "2.2.1"
     stdlib:
       repo: "puppetlabs/stdlib"
       ref: "3.2.0"
+    systemd:
+      repo: "camptocamp/systemd"
+      ref: "0.4.0"
   symlinks:
     auditd: "#{source_dir}"
 
